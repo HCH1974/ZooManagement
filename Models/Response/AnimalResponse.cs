@@ -16,8 +16,8 @@ namespace ZooManagement.Models.Response
         public string Classification => _animal.Classification;
         public string Name => _animal.Name;
         public string Sex => _animal.Sex;
-        public DateOnly DateOfBirth => _animal.DateOfBirth;
-        public DateOnly DateAcquired => _animal.DateAcquired;
-        public int NumberInZoo => _animal.NumberInZoo;
+        public string DateOfBirth => _animal.DateOfBirth;
+        public string DateAcquired => _animal.DateAcquired;
+        public string NumberInZoo => _animal.NumberInZoo;
     }
 }

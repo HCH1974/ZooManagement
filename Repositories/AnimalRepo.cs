@@ -10,23 +10,23 @@ using System.Text;
 
 namespace ZooManagement.Repositories
 {
-    public interface IAnimalsRepo
+    public interface IAnimalRepo
     {
         Animal GetById(int id);
     }
 
-    public class AnimalsRepo : IAnimalsRepo
+    public class AnimalRepo : IAnimalRepo
     {
         private readonly ZooManagementDbContext _context;
 
-        public AnimalsRepo(ZooManagementDbContext context)
+        public AnimalRepo(ZooManagementDbContext context)
         {
             _context = context;
         }
 
         public Animal GetById(int id)
         {
-            return _context.Animals
+            return _context.Animal
             .Single(animal => animal.Id == id);
         }
     }

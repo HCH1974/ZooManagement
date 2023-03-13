@@ -5,13 +5,13 @@ namespace ZooManagement
 {
     public class ZooManagementDbContext : DbContext
     {
-		public ZooManagementDbContext()
-		{
-		}
+        public ZooManagementDbContext()
+        {
+        }
 
-		public ZooManagementDbContext(DbContextOptions<ZooManagementDbContext> options) : base(options) {}
-        
-     public DbSet<Animal> Animals { get; set; }
-       
+        public ZooManagementDbContext(DbContextOptions<ZooManagementDbContext> options) : base(options) { }
+
+        public DbSet<Animal> Animal { get; set; }
+
     }
 }
