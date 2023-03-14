@@ -19,11 +19,10 @@ public class AnimalController : ControllerBase
         _animals = animals;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("api/get-animal/{id}")]
     public ActionResult<AnimalResponse> GetById([FromRoute] int id)
     {
         var animal = _animals.GetById(id);
         return new AnimalResponse(animal);
     }
-
 }

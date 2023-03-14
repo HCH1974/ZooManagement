@@ -28,7 +28,10 @@ builder.Services.AddDbContext<ZooManagementDbContext>(options =>
     options.UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()));
     options.UseSqlite("Data Source=zoomanagement.db");
 });
+
 builder.Services.AddTransient<IAnimalRepo, AnimalRepo>();
+builder.Services.AddTransient<ISpeciesRepo, SpeciesRepo>();
+
 var app = builder.Build();
 
 //var host = CreateHostBuilder(args).Build();
@@ -41,6 +44,12 @@ if (!context.Animal.Any())
 {
     var animals = SampleAnimals.GetAnimals();
     context.Animal.AddRange(animals);
+    context.SaveChanges();
+}
+if (!context.Species.Any())
+{
+    var species = SampleSpecies.GetSpecies();
+    context.Species.AddRange(species);
     context.SaveChanges();
 }
 // Configure the HTTP request pipeline.

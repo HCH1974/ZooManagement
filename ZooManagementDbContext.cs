@@ -8,10 +8,8 @@ namespace ZooManagement
         public ZooManagementDbContext()
         {
         }
-
         public ZooManagementDbContext(DbContextOptions<ZooManagementDbContext> options) : base(options) { }
-
         public DbSet<Animal> Animal { get; set; }
-
+        public DbSet<Species> Species { get; set; }
     }
 }
