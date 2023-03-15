@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "7.0.3",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.3",
           "Microsoft.OpenApi": "1.6.3",
+          "NLog": "5.1.2",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
@@ -203,6 +204,14 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.6.3.0",
             "fileVersion": "1.6.3.0"
+          }
+        }
+      },
+      "NLog/5.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.2.1561"
           }
         }
       },
@@ -570,6 +579,13 @@
       "sha512": "sha512-HQLJnNMXbt7D+VuJFBFaHMlkxKH1z3vLRrR3wiVrSOnwAXRQxHBLzgH5FjNSMKMWeyj3nY0AnM3OSACyGZUMZw==",
       "path": "microsoft.openapi/1.6.3",
       "hashPath": "microsoft.openapi.1.6.3.nupkg.sha512"
+    },
+    "NLog/5.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JfQY93ure3IPVTN3eabBewBGvrcXcWIlaesFEXdy5UzIymfIT9yCgLISYtM0cOhjWziIaUr/6Z9NC2RwtjwrsQ==",
+      "path": "nlog/5.1.2",
+      "hashPath": "nlog.5.1.2.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.4": {
       "type": "package",

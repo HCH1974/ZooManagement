@@ -8,6 +8,7 @@ using System;
 using Microsoft.AspNetCore.Http;
 using System.Web;
 using System.Text;
+using NLog;
 
 namespace ZooManagement.Repositories
 {
@@ -23,7 +24,7 @@ namespace ZooManagement.Repositories
     public class AnimalRepo : IAnimalRepo
     {
         private readonly ZooManagementDbContext _context;
-
+        private static readonly NLog.ILogger Logger = LogManager.GetCurrentClassLogger();
         public AnimalRepo(ZooManagementDbContext context)
         {
             _context = context;
@@ -31,8 +32,17 @@ namespace ZooManagement.Repositories
 
         public Animal GetById(int id)
         {
-            return _context.Animal
-            .Single(animal => animal.Id == id);
+            var retrievedAnimal = new Animal();
+            try
+            {
+                retrievedAnimal = _context.Animal.Single(animal => animal.Id == id);
+            }
+            catch (System.Exception)
+            {
+                Logger.Info($"Animal with id {id} not found.");
+                throw new ArgumentException($"Animal with id {id} not found.");
+            }
+            return retrievedAnimal;
         }
         public IEnumerable<Animal> Search(AnimalSearchRequest search)
         {

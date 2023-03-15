@@ -11,6 +11,9 @@ using ZooManagement.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +34,12 @@ builder.Services.AddDbContext<ZooManagementDbContext>(options =>
 
 builder.Services.AddTransient<IAnimalRepo, AnimalRepo>();
 builder.Services.AddTransient<ISpeciesRepo, SpeciesRepo>();
+
+var config = new LoggingConfiguration();
+var target = new FileTarget { FileName = @"C:\Training\ZooManagement\Logs\ZooManagement${shortdate}.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+config.AddTarget("File Logger", target);
+config.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Debug, target));
+LogManager.Configuration = config;
 
 var app = builder.Build();
 

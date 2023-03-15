@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ZooManagement.Models.Response;
 using ZooManagement.Models.Request;
 using ZooManagement.Repositories;
+using NLog;
 
 namespace ZooManagement.Controllers;
 
@@ -14,7 +15,7 @@ namespace ZooManagement.Controllers;
 public class AnimalController : ControllerBase
 {
     private readonly IAnimalRepo _animals;
-
+    private static readonly NLog.ILogger Logger = LogManager.GetCurrentClassLogger();
     public AnimalController(IAnimalRepo animals)
     {
         _animals = animals;
@@ -39,5 +40,6 @@ public class AnimalController : ControllerBase
     public void CreateAnimal(AnimalRequest animalRequest)
     {
         _animals.CreateAnimal(animalRequest);
+        Logger.Info("New Animal successfully created.");
     }
 }

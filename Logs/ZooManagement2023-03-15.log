@@ -1,0 +1,6 @@
+2023-03-15 11:10:16.4725 Info - ZooManagement.Controllers.AnimalController: New Animal successfully created.
+2023-03-15 11:23:28.6518 Info - ZooManagement.Repositories.AnimalRepo: Animal with id {id} not found.
+2023-03-15 11:25:15.9892 Info - ZooManagement.Repositories.AnimalRepo: Animal with id 200 not found.
+2023-03-15 11:29:17.8577 Info - ZooManagement.Repositories.AnimalRepo: Animal with id 200 not found.
+2023-03-15 11:35:24.5983 Info - ZooManagement.Repositories.AnimalRepo: Animal with id 200 not found.
+2023-03-15 11:37:58.2815 Info - ZooManagement.Controllers.AnimalController: New Animal successfully created.

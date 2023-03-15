@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k/T/muYjm63fqzI6ppVPNPnL8jZGNkShX7sWEFtaf7sy5FVwacFmePzz9EyEB3WEVdSDdwm9OMUayib29CbNRw==",
+  "dgSpecHash": "DwLLsUrWcaCAheYYeI7ueURtAfnMqAEFpIb2/LCbft/X6BWmy4uoB4LWh4Q/vM+469IEDaKupmoBvdS57/XV4A==",
   "success": true,
   "projectFilePath": "C:\\Training\\ZooManagement\\ZooManagement.csproj",
   "expectedPackageFiles": [
@@ -23,6 +23,7 @@
     "C:\\Users\\hanhuk\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\hanhuk\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\hanhuk\\.nuget\\packages\\microsoft.openapi\\1.6.3\\microsoft.openapi.1.6.3.nupkg.sha512",
+    "C:\\Users\\hanhuk\\.nuget\\packages\\nlog\\5.1.2\\nlog.5.1.2.nupkg.sha512",
     "C:\\Users\\hanhuk\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
     "C:\\Users\\hanhuk\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
     "C:\\Users\\hanhuk\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
