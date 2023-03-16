@@ -11,6 +11,7 @@
     {
         public string? SpeciesName { get; set; }
         public string? Classification { get; set; }
+        public int? Age { get; set; }
         public override string Filters
         {
             get
@@ -21,10 +22,13 @@
                 {
                     filters += $"&speciesName={SpeciesName}";
                 }
-
                 if (Classification != null)
                 {
                     filters += $"Classification={Classification}";
+                }
+                 if (Classification != null)
+                {
+                    filters += $"Age={Age}";
                 }
                 return filters;
             }

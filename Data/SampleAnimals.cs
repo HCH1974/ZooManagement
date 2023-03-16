@@ -144,7 +144,7 @@ namespace ZooManagement.Data
             DateTime start = new DateTime(1995, 1, 1);
             int range = (DateTime.Today - start).Days;
             DateTime newBirthDate = start.AddDays(gen.Next(range));
-            DateTime newDateAcquired = newBirthDate.AddDays(gen.Next(1000));
+            DateTime newDateAcquired = newBirthDate.AddDays(gen.Next(10000));
             if (newDateAcquired > DateTime.Today)
             {
                 newDateAcquired = DateTime.Today;

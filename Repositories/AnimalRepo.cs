@@ -78,13 +78,18 @@ namespace ZooManagement.Repositories
                     searchSpeciesIdList.Add(species.Id);
                 }
             }
+            DateTime now = DateTime.Now;
             return _context.Animal
                 .Where(p => search.SpeciesName == null || p.SpeciesId == searchSpecies.Id)
                 .Where(q => search.Classification == null || searchSpeciesIdList.Contains(q.SpeciesId))
+                .Where(r => search.Age == null ||
+                        ((now.Year - r.DateOfBirth.Year == search.Age) && (now.Month > r.DateOfBirth.Month)) ||
+                        ((now.Year - r.DateOfBirth.Year - 1 == search.Age) && (now.Month < r.DateOfBirth.Month)) ||
+                        ((now.Year - r.DateOfBirth.Year == search.Age) && (now.Month == r.DateOfBirth.Month) && (now.Day >= r.DateOfBirth.Day)) ||
+                        ((now.Year - r.DateOfBirth.Year - 1 == search.Age) && (now.Month < r.DateOfBirth.Month) && (now.Day < r.DateOfBirth.Day)))
                 .Skip((search.Page - 1) * search.PageSize)
                 .Take(search.PageSize);
         }
-
         public int Count(AnimalSearchRequest search)
         {
             var searchSpecies = new Species();
