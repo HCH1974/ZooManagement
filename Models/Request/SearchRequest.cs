@@ -9,7 +9,25 @@
 
     public class AnimalSearchRequest : SearchRequest
     {
-        public int SpeciesId { get; set; }
-        public override string Filters => SpeciesId == null ? "" : $"&speciesId={SpeciesId}";
+        public string? SpeciesName { get; set; }
+        public string? Classification { get; set; }
+        public override string Filters
+        {
+            get
+            {
+                var filters = "";
+
+                if (SpeciesName != null)
+                {
+                    filters += $"&speciesName={SpeciesName}";
+                }
+
+                if (Classification != null)
+                {
+                    filters += $"Classification={Classification}";
+                }
+                return filters;
+            }
+        }
     }
 }

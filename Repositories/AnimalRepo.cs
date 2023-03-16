@@ -47,17 +47,71 @@ namespace ZooManagement.Repositories
         }
         public IEnumerable<Animal> Search(AnimalSearchRequest search)
         {
+            var searchSpecies = new Species();
+            IQueryable<Species> searchSpeciesList;
+            var searchSpeciesIdList = new List<int>();
+            Console.WriteLine($"search.SpeciesName is {search.SpeciesName}");
+            if (search.SpeciesName != null)
+            {
+                try
+                {
+                    searchSpecies = _context.Species.Single(species => species.SpeciesName == search.SpeciesName);
+                }
+                catch (System.Exception)
+                {
+                    throw new ArgumentException($"Invalid Species Name."); ;
+                }
+            }
+            if (search.Classification != "")
+            {
+                try
+                {
+                    searchSpeciesList = _context.Species
+                                            .Where(species => species.Classification == search.Classification);
+                }
+                catch (System.Exception)
+                {
+                    throw new ArgumentException($"Invalid Classification."); ;
+                }
+                foreach (Species species in searchSpeciesList)
+                {
+                    searchSpeciesIdList.Add(species.Id);
+                }
+            }
             return _context.Animal
-                .Where(p => search.SpeciesId == null || p.SpeciesId == search.SpeciesId)
+                .Where(p => search.SpeciesName == null || p.SpeciesId == searchSpecies.Id)
+                .Where(q => search.Classification == null || searchSpeciesIdList.Contains(q.SpeciesId))
                 .Skip((search.Page - 1) * search.PageSize)
                 .Take(search.PageSize);
         }
 
         public int Count(AnimalSearchRequest search)
         {
+            var searchSpecies = new Species();
+            IQueryable<Species> searchSpeciesList;
+            var searchSpeciesIdList = new List<int>();
+            if (search.Classification != "")
+            {
+                try
+                {
+                    searchSpeciesList = _context.Species
+                                            .Where(species => species.Classification == search.Classification);
+                }
+                catch (System.Exception)
+                {
+                    throw new ArgumentException($"Invalid Classification."); ;
+                }
+                foreach (Species species in searchSpeciesList)
+                {
+                    searchSpeciesIdList.Add(species.Id);
+                }
+            }
             return _context.Animal
-                .Count(p => search.SpeciesId == null || p.SpeciesId == search.SpeciesId);
+                .Where(p => search.SpeciesName == null || p.SpeciesId == searchSpecies.Id)
+                .Where(q => search.Classification == null || searchSpeciesIdList.Contains(q.SpeciesId))
+                .Count();
         }
+
 
         public void CreateAnimal(AnimalRequest animalRequest)
         {
