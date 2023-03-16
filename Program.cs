@@ -49,10 +49,10 @@ var services = scope.ServiceProvider;
 var context = services.GetRequiredService<ZooManagementDbContext>();
 context.Database.EnsureCreated();
 
-if (!context.Animal.Any())
+if (!context.Enclosure.Any())
 {
-    var animals = SampleAnimals.GetAnimals();
-    context.Animal.AddRange(animals);
+    var enclosures = SampleEnclosures.GetEnclosures();
+    context.Enclosure.AddRange(enclosures);
     context.SaveChanges();
 }
 if (!context.Species.Any())
@@ -61,6 +61,19 @@ if (!context.Species.Any())
     context.Species.AddRange(species);
     context.SaveChanges();
 }
+if (!context.SpeciesToEnclosure.Any())
+{
+    var speciesToEnclosures = SampleSpeciesToEnclosure.GetSpeciesToEnclosures();
+    context.SpeciesToEnclosure.AddRange(speciesToEnclosures);
+    context.SaveChanges();
+}
+if (!context.Animal.Any())
+{
+    var animals = SampleAnimals.GetAnimals();
+    context.Animal.AddRange(animals);
+    context.SaveChanges();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

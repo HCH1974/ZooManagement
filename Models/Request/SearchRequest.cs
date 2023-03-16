@@ -9,8 +9,7 @@
 
     public class AnimalSearchRequest : SearchRequest
     {
-        public string SpeciesId { get; set; }
-        
+        public int SpeciesId { get; set; }
         public override string Filters => SpeciesId == null ? "" : $"&speciesId={SpeciesId}";
     }
 }

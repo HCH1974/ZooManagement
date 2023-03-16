@@ -1,0 +1,8 @@
+2023-03-16 11:42:01.6890 Info - ZooManagement.Repositories.AnimalRepo: Species with id 10 not found.
+2023-03-16 11:53:16.9296 Info - ZooManagement.Repositories.AnimalRepo: Species with id 0 not found.
+2023-03-16 11:53:33.8022 Info - ZooManagement.Repositories.AnimalRepo: Enclosure with id 0 not found.
+2023-03-16 11:53:46.1904 Info - ZooManagement.Repositories.AnimalRepo: Species 5 not allowed in Enclosure 1.
+2023-03-16 12:07:48.9451 Info - ZooManagement.Repositories.AnimalRepo: Species 1 not allowed in Enclosure 2.
+2023-03-16 12:07:58.5313 Info - ZooManagement.Repositories.AnimalRepo: No room at the inn. Enclosure 1 is at capacity.
+2023-03-16 12:17:02.9578 Info - ZooManagement.Controllers.AnimalController: New Animal successfully created.
+2023-03-16 13:58:36.2125 Info - ZooManagement.Controllers.AnimalController: New Animal successfully created.

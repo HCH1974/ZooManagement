@@ -12,10 +12,11 @@ namespace ZooManagement.Models.Response
         }
 
         public int Id => _animal.Id;
-        public string SpeciesId => _animal.SpeciesId;
+        public int SpeciesId => _animal.SpeciesId;
         public string Name => _animal.Name;
         public string Sex => _animal.Sex;
-        public string DateOfBirth => _animal.DateOfBirth;
-        public string DateAcquired => _animal.DateAcquired;
+        public DateTime DateOfBirth => _animal.DateOfBirth;
+        public DateTime DateAcquired => _animal.DateAcquired;
+        public int EnclosureId => _animal.EnclosureId;
     }
 }

@@ -7,16 +7,18 @@ namespace ZooManagement.Data
 {
     public static class SampleSpecies
     {
-        public const int NumberOfSpecies = 6;
+        public const int NumberOfSpecies = 8;
 
         private static readonly IList<IList<string>> Data = new List<IList<string>>
         {
-            new List<string> { "Lion", "Mammal", "27"},
-            new List<string> { "Tiger", "Mammal", "18"},
-            new List<string> { "Eagle", "Bird", "9"},
-            new List<string> { "Penguin", "Bird", "36"},
-            new List<string> { "Tarantula", "Spider", "18"},
-            new List<string> { "Shark", "Fish", "9"},
+            new List<string> { "Lion", "Mammal", "10"},
+            new List<string> { "Eagle", "Bird", "15"},
+            new List<string> { "Penguin", "Bird", "30"},
+            new List<string> { "Crocodile", "Reptile", "4"},
+            new List<string> { "Hippo", "Mammal", "3"},
+            new List<string> { "Tarantula", "Spider", "30"},
+            new List<string> { "Shark", "Fish", "25"},
+            new List<string> { "Giraffe", "Mammal", "8"},
         };
 
         public static IEnumerable<Species> GetSpecies()
